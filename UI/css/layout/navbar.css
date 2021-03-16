@@ -1,0 +1,50 @@
+﻿.navbar {
+    width: 226px;
+    height: calc(100vh - 48px);
+    box-shadow: 1px 1px 1px 1px #bbbbbb;
+    transition: width 0.5s;
+}
+
+.navbar .navbar-content {
+    width: 100%;
+}
+
+.navbar .navbar-item {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar .navbar-item:focus {
+    background-color: #019160;
+    color: #fff;
+}
+
+.navbar .navbar-item:hover {
+    background-color: #e5e5e5;
+    color: #000;
+}
+
+.navbar .navbar-item .navbar-item-icon {
+    margin-left: 16px;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.navbar .navbar-item .navbar-item-text {
+    margin-left: 10px;
+}
+
+
+/* Navbar toggle */
+
+.navbar.navbar-toggle {
+    width: 52px;
+}
+
+.navbar.navbar-toggle .navbar-item-text {
+    display: none;
+}

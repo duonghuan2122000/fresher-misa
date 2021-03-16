@@ -1,0 +1,85 @@
+/* Button primary */
+
+.btn {
+    border-radius: 4px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn.btn-primary {
+    background-color: #019160;
+    border: 1px solid #019160;
+    color: #ffffff;
+}
+
+.btn.btn-primary:hover {
+    background-color: #2FBE8E;
+}
+
+.btn.btn-primary:active {
+    background-color: #01B075;
+}
+
+
+/* Button icon */
+
+.btn.has-icon {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btn.has-icon>div {
+    display: inline-block;
+    line-height: 40px;
+}
+
+.btn.has-icon .btn-icon-left {
+    padding-left: 16px;
+    padding-right: 8px;
+}
+
+.btn.has-icon .btn-text {
+    padding-right: 16px;
+}
+
+.btn.has-icon .btn-icon-right {
+    padding-left: 12px;
+    padding-right: 12px;
+    border-left: 1px solid #ccc;
+}
+
+
+/* Button seconds */
+
+.btn.btn-second {
+    border: 1px solid #bbbbbb;
+    color: #000;
+    background-color: #bbbbbb;
+}
+
+.btn.btn-second:hover {
+    background-color: #e9ebee;
+}
+
+.btn.btn-second:active {
+    background-color: #01B075;
+}
+
+
+/* Button Icon without text */
+
+.btn-icon {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #9d9d9d;
+}

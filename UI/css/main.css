@@ -1,0 +1,65 @@
+@import url('components/button.css');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: GoogleSans-Regular;
+    font-size: 13px;
+    margin: 0;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+/* Spacing */
+
+.p-1 {
+    padding: 8px;
+}
+
+.px-1 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.mt-1 {
+    margin-top: 8px;
+}
+
+.mr-2 {
+    margin-right: 16px;
+}
+
+
+/* Text decoration */
+
+.has-text-centered {
+    text-align: center;
+}
+
+.has-text-bold {
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'GoogleSans-Regular';
+    src: url('../content/font/GoogleSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Bold';
+    src: url('../content/font/GoogleSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Italic';
+    src: url('../content/font/GoogleSans-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-BlackItalic';
+    src: url('../content/font/GoogleSans-BlackItalic.otf') format('opentype');
+}

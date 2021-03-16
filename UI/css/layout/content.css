@@ -1,0 +1,60 @@
+.content {
+    position: absolute;
+    top: 48px;
+    left: 226px;
+    bottom: 0;
+    right: 0;
+    padding: 16px;
+    transition: left 0.5s;
+}
+
+.content .title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .title-box .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content .toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.content .toolbar .icon-refresh {
+    background-image: url('../../content/icon/refresh.png');
+    height: 40px;
+    width: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.content .data {
+    overflow: auto;
+}
+
+.content .footer {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 5px solid #ccc;
+    padding: 0 8px;
+}
+
+
+/* Content navbar toggle */
+
+.navbar.navbar-toggle+.content {
+    left: 52px;
+}

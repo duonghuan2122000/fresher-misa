@@ -1,0 +1,79 @@
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog .dialog-content {
+    width: 700px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.dialog .dialog-content .dialog-header {
+    padding: 24px 24px 0 24px;
+    position: relative;
+}
+
+.dialog .dialog-content .dialog-body {
+    padding: 24px;
+}
+
+.dialog .dialog-content .dialog-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dialog .dialog-content .dialog-close-button {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 0;
+    top: 0;
+    text-align: center;
+    line-height: 40px;
+    border-bottom-left-radius: 4px;
+    cursor: pointer;
+}
+
+.dialog .dialog-content .dialog-close-button:hover {
+    background-color: #bbbbbb;
+}
+
+.dialog .dialog-body .avatar-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog .dialog-content .dialog-footer {
+    background-color: #bbbbbb;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 16px;
+}
+
+
+/* Form Dialog */
+
+.avatar-input {
+    background-image: url('../../content/img/default-avatar.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #bbbbbb;
+    cursor: pointer;
+}

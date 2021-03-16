@@ -1,0 +1,35 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr {
+    border-bottom: 1px solid #bbbbbb;
+    height: 48px;
+}
+
+.table thead tr {
+    text-align: left;
+}
+
+.table th,
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.table th:first-child,
+.table td:first-child {
+    padding-left: 16px;
+}
+
+.table th:last-child,
+.table th:last-child {
+    padding-right: 16px;
+}
+
+
+/* .table tr th,
+.table tr td {
+    margin-left: 10px;
+} */
