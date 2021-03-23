@@ -12,8 +12,13 @@
     text-align: left;
 }
 
+.table tbody tr:hover {
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+
 .table th,
-td {
+.table td {
     padding-left: 10px;
     padding-right: 10px;
 }

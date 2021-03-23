@@ -38,6 +38,7 @@
 
 .content .data {
     overflow: auto;
+    height: calc(100% - 56px - 100px);
 }
 
 .content .footer {

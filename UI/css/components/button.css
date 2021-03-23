@@ -82,4 +82,9 @@
     line-height: 40px;
     text-align: center;
     color: #9d9d9d;
+    cursor: pointer;
+}
+
+.btn-icon:hover {
+    background-color: #e8e8e8;
 }

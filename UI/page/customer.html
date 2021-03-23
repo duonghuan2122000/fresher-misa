@@ -87,7 +87,7 @@
     <div class="content">
         <div class="title-box">
             <div class="title">Danh sách khách hàng</div>
-            <div class="btn btn-primary has-icon">
+            <div id="btnAdd" class="btn btn-primary has-icon">
                 <div class="btn-icon-left fas fa-user-plus"></div>
                 <div class="btn-text">Thêm khách hàng</div>
             </div>
@@ -97,49 +97,25 @@
                 <span class="icon-left fas fa-search"></span>
                 <input type="text" class="input" placeholder="Tìm kiếm theo mã, tên khách hàng">
             </div>
-            <div class="fas fa-sync-alt btn-icon"></div>
+            <div id="btnRefresh" class="fas fa-sync-alt btn-icon"></div>
         </div>
         <div class="data">
-            <table class="table">
+            <table id="tblListCustomer" class="table">
                 <thead>
                     <tr>
-                        <th>Ma</th>
-                        <th>Ho va ten</th>
-                        <th>Vi tri</th>
-                        <th>Bo phan</th>
+                        <th>Mã khách hàng</th>
+                        <th>Họ và tên</th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>Nhóm khách hàng</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Số tiền nợ</th>
+                        <th>Đang hoạt động</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyen Huong Giang</td>
-                        <td>Tong Giam doc</td>
-                        <td>Khoi san xuat</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyen Huong Giang</td>
-                        <td>Tong Giam doc</td>
-                        <td>Khoi san xuat</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyen Huong Giang</td>
-                        <td>Tong Giam doc</td>
-                        <td>Khoi san xuat</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyen Huong Giang</td>
-                        <td>Tong Giam doc</td>
-                        <td>Khoi san xuat</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyen Huong Giang</td>
-                        <td>Tong Giam doc</td>
-                        <td>Khoi san xuat</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
@@ -164,101 +140,105 @@
 
     <div class="dialog hide">
         <div class="dialog-content">
-            <div class="dialog-header">
-                <div class="dialog-title">Thông tin khách hàng</div>
-                <div class="dialog-close-button">&#x2715;</div>
-            </div>
-            <div class="dialog-body">
-                <div class="row">
-                    <div class="col-4 p-1 avatar-box">
-                        <div class="avatar-input"></div>
-                        <div class="has-text-centered">Vui lòng chọn ảnh có định dạng</div>
-                        <div class="has-text-bold has-text-centered">.jpg, .jpeg, .png, .gif</div>
-                    </div>
-                    <div class="col-4 px-1">
-                        <div class="field-input mt-1">
-                            <label class="label" for="">Mã khách hàng (<span class="important">*</span>)</label>
-                            <input type="text" class="input">
+            <form id="customerForm" method="POST">
+                <div class="dialog-header">
+                    <div class="dialog-title">Thông tin khách hàng</div>
+                    <div class="dialog-close-button">&#x2715;</div>
+                </div>
+                <div class="dialog-body">
+
+                    <div class="row">
+                        <div class="col-4 p-1 avatar-box">
+                            <div class="avatar-input"></div>
+                            <div class="has-text-centered">Vui lòng chọn ảnh có định dạng</div>
+                            <div class="has-text-bold has-text-centered">.jpg, .jpeg, .png, .gif</div>
                         </div>
-                        <div class="field-input mt-1">
-                            <label class="label" for="">Mã thẻ thành viên</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div class="field-input mt-1">
-                            <label class="label" for="">Ngày sinh</label>
-                            <input type="date" class="input" placeholder="Input">
-                        </div>
-                    </div>
-                    <div class="col-4 px-1">
-                        <div class="field-input mt-1">
-                            <label class="label" for="">Họ và tên (<span class="important">*</span>)</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div class="field-input mt-1">
-                            <label class="label" for="">Nhóm khách hàng</label>
-                            <select class="input">
-                                <option value=""></option>
-                            </select>
-                        </div>
-                        <div class="field-input mt-1">
-                            <label class="label" for="">Giới tính</label>
-                            <div class="btn-radio">
-                                <input type="radio" name="gender">
-                                <label for="">Nam</label>
+                        <div class="col-4 px-1">
+                            <div class="field-input mt-1">
+                                <label class="label" for="">Mã khách hàng (<span class="important">*</span>)</label>
+                                <input type="text" class="input" name="CustomerCode">
                             </div>
-                            <div class="btn-radio">
-                                <input type="radio" name="gender">
-                                <label for="">Nữ</label>
+                            <div class="field-input mt-1">
+                                <label class="label" for="">Mã thẻ thành viên</label>
+                                <input type="text" class="input" name="">
                             </div>
-                            <div class="btn-radio">
-                                <input type="radio" name="gender">
-                                <label for="">Khác</label>
+                            <div class="field-input mt-1">
+                                <label class="label" for="">Ngày sinh</label>
+                                <input type="date" class="input" name="DateOfBirth">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mt-1">
-                    <div class="col-8">
-                        <div class="field-input px-1">
-                            <label for="">Email</label>
-                            <input type="email" name="" id="" class="input" placeholder="example@domain.com">
+                        <div class="col-4 px-1">
+                            <div class="field-input mt-1">
+                                <label class="label" for="">Họ và tên (<span class="important">*</span>)</label>
+                                <input type="text" class="input" name="FullName">
+                            </div>
+                            <div class="field-input mt-1">
+                                <label class="label" for="">Nhóm khách hàng</label>
+                                <select class="input" name="CustomerGroupId">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="field-input mt-1">
+                                <label class="label" for="">Giới tính</label>
+                                <div class="btn-radio">
+                                    <input type="radio" name="Gender" value="1">
+                                    <label for="">Nam</label>
+                                </div>
+                                <div class="btn-radio">
+                                    <input type="radio" name="Gender" value="0">
+                                    <label for="">Nữ</label>
+                                </div>
+                                <div class="btn-radio">
+                                    <input type="radio" name="Gender" value="2">
+                                    <label for="">Khác</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="field-input px-1">
-                            <label for="">Số điện thoại (<span class="important">*</span>)</label>
-                            <input type="text" class="input">
+                    <div class="row mt-1">
+                        <div class="col-8">
+                            <div class="field-input px-1">
+                                <label for="">Email</label>
+                                <input type="email" name="Email" id="" class="input" placeholder="example@domain.com">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="field-input px-1">
+                                <label for="">Số điện thoại (<span class="important">*</span>)</label>
+                                <input type="text" class="input" name="PhoneNumber">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mt-1">
-                    <div class="col-8">
-                        <div class="field-input px-1">
-                            <label for="">Tên công ty</label>
-                            <input type="text" name="" id="" class="input">
+                    <div class="row mt-1">
+                        <div class="col-8">
+                            <div class="field-input px-1">
+                                <label for="">Tên công ty</label>
+                                <input type="text" name="CompanyName" id="" class="input">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="field-input px-1">
+                                <label for="">Mã số thuế</label>
+                                <input type="text" class="input" placeholder="Mã số thuế của công ty" name="CompanyTaxCode">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="field-input px-1">
-                            <label for="">Mã số thuế</label>
-                            <input type="text" class="input" placeholder="Mã số thuế của công ty">
-                        </div>
+                    <div class="field-input mt-1 px-1">
+                        <label for="">Địa chỉ</label>
+                        <input type="text" class="input" name="Address">
+                    </div>
+
+                </div>
+                <div class="dialog-footer">
+                    <div class="flex flex-right">
+                        <div class="btn mr-2">Hủy</div>
+                        <button type="submit" id="btnSave" class="btn btn-primary has-icon mr-2">
+                            <div class="btn-icon-left fas fa-save"></div>
+                            <div class="btn-text">Lưu</div>
+                        </button>
                     </div>
                 </div>
-                <div class="field-input mt-1 px-1">
-                    <label for="">Địa chỉ</label>
-                    <input type="text" class="input">
-                </div>
-            </div>
-            <div class="dialog-footer">
-                <div class="flex flex-right">
-                    <div class="btn mr-2">Hủy</div>
-                    <div class="btn btn-primary has-icon mr-2">
-                        <div class="btn-icon-left fas fa-save"></div>
-                        <div class="btn-text">Lưu</div>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 
