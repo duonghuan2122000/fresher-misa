@@ -2,8 +2,6 @@ $(function() {
     loadData();
 
     setEvent();
-
-    saveCustomer();
 });
 
 /**
@@ -26,6 +24,10 @@ function setEvent() {
     // sự kiện mở dialog thêm mới
     $('#btnAdd').on('click', function(e) {
         e.preventDefault();
+        $('form#customerForm').data({
+            isInsert: true,
+            customerId: null
+        });
         $('.dialog').removeClass('hide');
     });
 
@@ -48,7 +50,17 @@ function setEvent() {
         var customerId = $(this).data('recordId');
         var customer = getCustomer(customerId);
         bindCustomerToDialog(customer);
+        $('form#customerForm').data({
+            isInsert: false,
+            CustomerId: customerId
+        });
         $('.dialog').removeClass('hide');
+    });
+
+    // sự kiện lưu thông tin khách hàng.
+    $('form#customerForm').on('submit', function(e) {
+        e.preventDefault();
+        saveCustomer();
     });
 }
 
@@ -93,17 +105,39 @@ function clearValForm() {
  * Created at: 19/03/2021
  */
 function saveCustomer() {
-    $('form#customerForm').on('submit', function(e) {
-        e.preventDefault();
-        var fields = $(this).serializeArray();
-        var customer = {};
-        $.each(fields, function(_, field) {
-            customer[field.name] = field.value;
-        });
+    var fields = $('form#customerForm').serializeArray();
 
-        // tiến hành lưu data khách hàng trên server.
-        console.log(customer);
+    var customer = {};
+    $.each(fields, function(_, field) {
+        customer[field.name] = field.value;
     });
+    customer.CustomerGroupId = "19165ed7-212e-21c4-0428-030d4265475f";
+    var dataEle = $('form#customerForm').data();
+    var configAjax = {
+        contentType: 'application/json',
+        data: JSON.stringify(customer),
+        async: false
+    };
+
+    if (dataEle.isInsert) {
+        configAjax.url = 'http://api.manhnv.net/api/customers';
+        configAjax.method = 'POST';
+    } else {
+        configAjax.url = `http://api.manhnv.net/api/customers/${dataEle.CustomerId}`;
+        configAjax.method = 'PUT';
+    }
+
+    // lưu thông tin khách hàng lên server.
+    $.ajax(configAjax)
+        .done(function(res) {
+            $('.dialog').addClass('hide');
+            clearValForm();
+            alert("Lưu thành công.");
+        })
+        .fail(function(err) {
+            console.log(err);
+            console.error("Không thể lưu thông tin khách hàng.");
+        });
 }
 
 /**
